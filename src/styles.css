@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Red hat';
+    src: url('/public/fonts/RedHatText-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Red hat italic';
+    src: url('/public/fonts/RedHatText-Italic-VariableFont_wght.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+
+body{
+    margin: 0px;
+    padding: 88px;
+    background-color: var(--color-rose-50, #FCF8F6);
+}
+
+:root{
+    --font: 'red hat';
+    --font-italic: 'Red hat italic';
+}

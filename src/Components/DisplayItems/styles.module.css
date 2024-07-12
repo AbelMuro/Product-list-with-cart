@@ -1,0 +1,99 @@
+.container{
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    column-gap: 24px;
+    row-gap: 32px;
+}
+
+
+.container > h1{
+    color: var(--color-rose-900, #260F08);
+    font-family: var(--font);
+    font-size: var(--font-size-text-preset-1, 40px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 48px */
+    grid-column: 1/4;
+    text-align: center;
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    position: relative;
+}
+
+.item > button{
+    width: 160px;
+    height: 44px;
+    padding: 12px;
+    gap: 8px;
+    border-radius: 999px;
+    border: 1px solid var(--color-rose-400, #AD8A85);
+    background-color: var(--color-white, #FFF);
+    color: var(--color-rose-900, #260F08);
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 215px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.item > button > img{
+    width: 20px;
+    height: 20px;
+}
+
+.item_image{
+    width: 100%;
+    object-fit: contain;
+}
+
+.item_details{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item_details > h2{
+    color: var(--color-rose-500, #87635A);
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+.item_details > h1{
+    color: var(--color-rose-900, #260F08);
+    font-family: var(--font);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0px;
+}
+
+.item_details > p{
+    color: var(--color-red, #C73B0F);
+    font-family: var(--font);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0px;
+}
