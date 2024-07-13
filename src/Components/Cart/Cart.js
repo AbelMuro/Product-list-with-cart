@@ -25,35 +25,39 @@ function Cart(){
             {cart.length !== 0 ?
             <>
                 <div className={styles.items}>
-                    {cart.map((item) => {
+                    {cart.map((item, i) => {
                         const name = item.name;
                         const quantity = item.quantity;
                         const price = item.price;
                         const total = quantity * price;
 
                         return(
-                            <div className={styles.item}>
-                                <h1 className={styles.item_name}>
-                                    {name}
-                                </h1>
-                                <div className={styles.item_details}>
-                                    <p>
-                                        {quantity}x
-                                    </p>
-                                    <p>
-                                        @ ${price}
-                                    </p>
-                                    <p>
-                                        ${total.toFixed(2)}
-                                    </p>
-                                </div>
-                                <button className={styles.item_remove} onClick={() => handleRemove(name)}> 
-                                    <div className={styles.remove}/>
-                                </button>
+                            <div key={name}>
+                                <div className={styles.item}>
+                                    <h1 className={styles.item_name}>
+                                        {name}
+                                    </h1>
+                                    <div className={styles.item_details}>
+                                        <p>
+                                            {quantity}x
+                                        </p>
+                                        <p>
+                                            @ ${price}
+                                        </p>
+                                        <p>
+                                            ${total.toFixed(2)}
+                                        </p>
+                                    </div>
+                                    <button className={styles.item_remove} onClick={() => handleRemove(name)}> 
+                                        <div className={styles.remove}/>
+                                    </button>
+                                </div>  
+                                {i !== cart.length - 1 && <div className={styles.separator}></div>}                          
                             </div>
                         )
                     })}
                 </div>
+                <div className={styles.separator}></div>
                 <div className={styles.total}>
                     Order Total
                     <p>

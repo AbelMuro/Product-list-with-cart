@@ -7,7 +7,11 @@ const initialState = { cart: [] }
 
 const cartReducer = createReducer(initialState, (builder) => {       
   builder
-    .addCase(addItem, (state, action) => {       
+    .addCase(addItem, (state, action) => {      
+        for(let i = 0; i < state.cart.length; i++){
+            if(state.cart[i].name === action.item.name)
+                return;
+        } 
         state.cart.push(action.item);
     })
     .addCase(removeItem, (state, action) => {

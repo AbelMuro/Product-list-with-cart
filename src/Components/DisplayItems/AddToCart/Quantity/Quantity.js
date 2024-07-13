@@ -1,9 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useMemo} from 'react';
 import { useDispatch } from 'react-redux';
 import * as styles from './styles.module.css';
+import {motion} from 'framer-motion';
+import {buttonVariant} from './Variants';
+import store from '~/Store';
 
-function Quantity({item,setButton}) {
-    const [quantity, setQuantity] = useState(1);
+function Quantity({item}) {
+    const prevQuantity = useMemo(() => {
+        const cart = store.getState().cart;
+        return cart.filter(currentItem => currentItem.name === item.name)[0]?.quantity;
+    }, [])
+    const [quantity, setQuantity] = useState(prevQuantity ? prevQuantity : 1);
     const dispatch = useDispatch();
 
     const handleDecrement = () => { 
@@ -21,8 +28,7 @@ function Quantity({item,setButton}) {
                 item: {
                     name: item.name
                 }
-            });
-            setButton(true)            
+            });         
         }
         else
             dispatch({
@@ -34,17 +40,9 @@ function Quantity({item,setButton}) {
             })
     }, [quantity])
 
-    useEffect(() => {
-        dispatch({type: 'ADD_ITEM', item: {
-            name: item.name,
-            quantity: 1,
-            price: item.price,
-            thumbnail: item.image.thumbnail
-        }})
-    }, [])
 
     return(
-        <div className={styles.quantity}>
+        <motion.div variants={buttonVariant} initial='hidden' animate='show' exit='exit' className={styles.quantity} key={2}>
             <button onClick={handleDecrement}>
                 <div className={styles.minus}/>
             </button>
@@ -52,7 +50,7 @@ function Quantity({item,setButton}) {
             <button onClick={handleIncrement}>
                 <div className={styles.plus}/>
             </button>
-        </div>
+        </motion.div>
     )
 }
 

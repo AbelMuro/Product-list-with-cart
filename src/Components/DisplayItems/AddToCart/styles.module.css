@@ -2,14 +2,6 @@
     position: relative;
 }
 
-.item_image{
-    width: 100%;
-    object-fit: contain;
-    border-radius: 8px;
-    transition: all 0.2s linear, border 0s;
-}
-
-
 .addToCart{
     width: 75.0000117188%;
     height: 44px;
@@ -44,4 +36,16 @@
 .addToCart > img{
     width: 20px;
     height: 20px;
+}
+
+@media(max-width: 740px){
+    .addToCart{
+        width: 160px;
+    }
+}
+
+@media(max-width: 600px){
+    .item_image{
+        border-radius: 8px;
+    }
 }
