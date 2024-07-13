@@ -13,13 +13,28 @@
     transition: all 0.2s linear;
 }
 
+.container{
+    width: 1216px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 32px;    
+    margin: auto;
+}
+
 body{
     margin: 0px;
-    padding: 88px;
+    padding: 88px 0px;
     background-color: var(--color-rose-50, #FCF8F6);
 }
 
 :root{
     --font: 'red hat';
     --font-italic: 'Red hat italic';
+}
+
+@media(max-width: 1280px){
+    .container{
+        width: 90%;
+    }
 }

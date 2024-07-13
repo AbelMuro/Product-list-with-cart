@@ -1,6 +1,6 @@
 import React from 'react';
 import items from './Data';
-import icons from './icons';
+import AddToCart from './AddToCart';
 import * as styles from './styles.module.css';
 
 function DisplayItems() {
@@ -17,11 +17,7 @@ function DisplayItems() {
 
                     return(
                         <div className={styles.item} key={item.name}>
-                            <img className={styles.item_image} src={item.image.desktop}/>
-                            <button>
-                                <img src={icons['cart']}/>
-                                Add to Cart
-                            </button>
+                            <AddToCart item={item}/>
                             <div className={styles.item_details}>
                                 <h2>
                                     {category}
