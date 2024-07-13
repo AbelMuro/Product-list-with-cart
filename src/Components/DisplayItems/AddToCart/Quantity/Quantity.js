@@ -22,7 +22,7 @@ function Quantity({item}) {
     }
 
     useEffect(() => {
-        if(!quantity){
+        if(quantity <= 0){
             dispatch({
                 type: 'REMOVE_ITEM',
                 item: {
