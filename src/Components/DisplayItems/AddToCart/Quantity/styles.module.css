@@ -37,6 +37,7 @@
 .minus{
     width: 10px;
     height: 2px;
+    flex-shrink: 0;
     background-color: white;
     mask-image: url('./icons/icon-decrement-quantity.svg');
     -webkit-mask-image: url('./icons/icon-decrement-quantity.svg');
@@ -51,6 +52,7 @@
 .plus{
     width: 10px;
     height: 10px;
+    flex-shrink: 0;
     background-color: white;
     mask-image: url('./icons/icon-increment-quantity.svg');
     -webkit-mask-image: url('./icons/icon-increment-quantity.svg');
