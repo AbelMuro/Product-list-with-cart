@@ -1,6 +1,5 @@
-
 .quantity{
-    width: 75.0000117188%;
+    width: 160px;
     display: flex;
     height: 44px;
     padding: 0px 12px;
@@ -74,6 +73,13 @@
 
 .quantity > button:hover > .plus{
     background-color: #C73B0F
+}
+
+@media(max-width: 1280px){
+    .quantity{
+        transition: all 0.2s linear, width 0s;
+        width: 69%;
+    }
 }
 
 @media(max-width: 740px){

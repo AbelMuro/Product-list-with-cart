@@ -3,7 +3,7 @@
 }
 
 .addToCart{
-    width: 75.0000117188%;
+    width: 160px;
     height: 44px;
     white-space: nowrap;
     gap: 8px;
@@ -38,8 +38,15 @@
     height: 20px;
 }
 
+@media(max-width: 1280px){
+    .addToCart{
+        width: 69%;
+    }
+}
+
 @media(max-width: 740px){
     .addToCart{
+        transition: all 0.2s linear, width 0s;
         width: 160px;
     }
 }
